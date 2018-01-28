@@ -10,9 +10,9 @@ def setup():
 def loop():
 	while True:
 		if (0 == GPIO.input(ObstaclePin)):  #while having no object is false
-			print "Detected Object in Blind Spot!"
+			print "Status: Obstruction Detected!"
 		else:
-                        print "Blind spot is clear."
+                        print "Status: Clear."
 			
 
 def destroy():
