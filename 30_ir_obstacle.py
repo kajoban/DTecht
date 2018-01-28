@@ -16,7 +16,7 @@ def loop():
 		if (GPIO.input(ObstaclePin) and status == 0):  #while having no object is false and status is clear
 			print "Status: Clear."
 			status = 1 #status changes to obstructed 
-		elif ( !(GPIO.input(ObstaclePin)) and status == 1): #while having no object is true and status is obstructed 
+		elif ((GPIO.input(ObstaclePin) != 0) and status == 1): #while having no object is true and status is obstructed 
                         print "Status: Obstruction Detected!"
                         status = 0 #status changes to clear 
 			
