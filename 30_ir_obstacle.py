@@ -8,11 +8,16 @@ def setup():
 	GPIO.setup(ObstaclePin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def loop():
+
+        status = 1 #status is clear initially
+        
 	while True:
-		if (0 == GPIO.input(ObstaclePin)):  #while having no object is false
+		if (0 == GPIO.input(ObstaclePin) and status == 1):  #while having no object is false and status is clear
 			print "Status: Obstruction Detected!"
-		else:
+			status = 0 #status changes to obstructed 
+		else if (0 != GPIO.input(ObstaclePin) and status == 0): #while having no object is true is status is obstructed 
                         print "Status: Clear."
+                        status = 1 #status changes to clear 
 			
 
 def destroy():
