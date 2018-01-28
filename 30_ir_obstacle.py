@@ -13,11 +13,11 @@ def loop():
         
 	while True:
                 
-		if (0 == GPIO.input(ObstaclePin)  and status == 1)):  #while having no object is false
+		if (0 == GPIO.input(ObstaclePin)  and status == 1):  #while having no object is false
 			print "Status: Obstruction Detected!"
 			status = 0; #now obstructed 
 			
-		else if (0 != GPIO.input(ObstaclePin and status == 0)):  #while having no object is false
+		else if (0 != GPIO.input(ObstaclePin) and status == 0):  #while having no object is false
 			print "Status: Clear."
 			status = 1; #now clear 
         
